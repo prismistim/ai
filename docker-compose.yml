@@ -8,6 +8,5 @@ services:
     platform: linux/amd64
     volumes:
       - './font.ttf:/ai/font.ttf:ro'
-      - './var/ai/data:/ai/data'
-      - './var/memory:/data/memory'
+      - '/data:/ai/data'
     restart: always
