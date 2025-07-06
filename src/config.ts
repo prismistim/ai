@@ -28,7 +28,7 @@ const config: Config = {
 	host: process.env.MISSKEY_HOST || '',
 	wsUrl: '',
 	apiUrl: '',
-	serverName: 'moemoe.dev',
+	serverName: process.env.SERVER_NAME || undefined,
 	i: process.env.MISSKEY_I_TOKEN || '',
 	notingEnabled: true,
 	keywordEnabled: true,
