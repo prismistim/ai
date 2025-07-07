@@ -1,6 +1,6 @@
 FROM node:lts
 
-RUN apt-get update && apt-get install tini --no-install-recommends -y && apt-get clean && rm -rf /var/lib/apt-get/lists/*
+RUN apt-get update && apt-get install tini wget --no-install-recommends -y && apt-get clean && rm -rf /var/lib/apt-get/lists/*
 
 ARG enable_mecab=1
 
@@ -20,6 +20,8 @@ COPY . /ai
 
 WORKDIR /ai
 RUN npm install && npm run build || test -f ./built/index.js
+
+RUN wget -O font.ttf https://obj.moemoe.dev/asssets/m_plus_1_code.ttf
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD npm start
