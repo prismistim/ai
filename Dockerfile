@@ -21,7 +21,7 @@ COPY . /ai
 WORKDIR /ai
 RUN npm install && npm run build || test -f ./built/index.js
 
-RUN wget -O font.ttf https://obj.moemoe.dev/asssets/m_plus_1_code.ttf
+RUN wget -O font.ttf https://obj.moemoe.dev/assets/m_plus_1_code.ttf
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD npm start
