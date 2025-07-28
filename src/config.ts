@@ -42,7 +42,7 @@ const config: Config = {
 	aichatRandomTalkEnabled: true,
 	aichatRandomTalkProbability: '0.01',
 	aichatRandomTalkIntervalMinutes: '180',
-	aichatGroundingWithGoogleSearchAlwaysEnabled: true,
+	aichatGroundingWithGoogleSearchAlwaysEnabled: false,
 	mecab: '/usr/bin/mecab',
 	mecabDic: '/usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd/',
 	memoryDir: 'data',
