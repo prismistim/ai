@@ -385,7 +385,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (!msg.includes([this.name])) {
+		if (!msg.includes([this.name]) && msg.user.host !== config.host) {
 			return false;
 		} else {
 			this.log('AiChat requested');
