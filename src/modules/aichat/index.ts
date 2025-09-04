@@ -385,6 +385,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
+		console.log(msg.user.host)
 		if (!msg.includes([this.name]) || msg.user.host !== config.host) {
 			return false;
 		} else {
