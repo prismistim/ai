@@ -385,8 +385,8 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		console.log(msg.user.isFollowing)
-		if (!msg.includes([this.name]) || !msg.user.isFollowing) {
+		console.log(msg.user)
+		if (!msg.includes([this.name]) || !msg.user) {
 			return false;
 		} else {
 			this.log('AiChat requested');
