@@ -385,7 +385,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		console.log(msg.user)
+		console.log(msg)
 		if (!msg.includes([this.name]) || !msg.user) {
 			return false;
 		} else {
