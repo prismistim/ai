@@ -5,4 +5,7 @@ export type User = {
 	host?: string | null;
 	isFollowing?: boolean;
 	isBot: boolean;
+	avatarUrl: string;
+	avatarBlurhash?: string | null;
+	emoji?: string | null;
 };
