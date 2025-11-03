@@ -713,7 +713,7 @@ export default class extends Module {
 			this.log('Subscribe&Set Timer...');
 
 			// メンションをsubscribe
-			this.subscribeReply(reply.id, reply.id);
+			this.subscribeReply(reply.id, false, reply.id);
 
 			// タイマーセット
 			this.setTimeoutWithPersistence(TIMEOUT_TIME, {
