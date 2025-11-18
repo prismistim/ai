@@ -4,12 +4,14 @@ import serifs from '@/serifs.js';
 import { genMaze } from './gen-maze.js';
 import { renderMaze } from './render-maze.js';
 import Message from '@/message.js';
+import config from '@/config.js';
 
 export default class extends Module {
 	public readonly name = 'maze';
 
 	@bindThis
 	public install() {
+		if (!config.mazeEnabled) return {};
 		this.post();
 		setInterval(this.post, 1000 * 60 * 3);
 
@@ -63,7 +65,7 @@ export default class extends Module {
 			if (msg.includes(['簡単', 'かんたん', '易しい', 'やさしい', '小さい', 'ちいさい'])) size = 'easy';
 			if (msg.includes(['難しい', 'むずかしい', '複雑な', '大きい', 'おおきい'])) size = 'hard';
 			if (msg.includes(['死', '鬼', '地獄'])) size = 'veryHard';
-			if (msg.includes(['藍']) && msg.includes(['本気'])) size = 'ai';
+			if (msg.includes(['青依', 'あおい']) && msg.includes(['本気'])) size = 'ai';
 			this.log('Maze requested');
 			setTimeout(async () => {
 				const file = await this.genMazeFile(Date.now(), size);
