@@ -576,7 +576,7 @@ export default class extends Module {
 		let targetedMessage = choseNote;
 		if (choseNote.extractedText == undefined) {
 			const data = await this.ai.api('notes/show', { noteId: choseNote.id });
-			targetedMessage = new Message(this.ai, data);
+			targetedMessage = new Message(this.ai, data, false);
 		}
 		const result = await this.handleAiChat(current, targetedMessage);
 
